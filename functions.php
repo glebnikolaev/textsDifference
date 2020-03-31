@@ -3,7 +3,7 @@
 function diff($old, $new)
 {
     //составляем матрицу предложений и вычисляем "сдвиги" в ключах
-    $matrix = array();
+    $matrix = [];
     $maxlen = 0;
     foreach ($old as $oindex => $ovalue) {
         $nkeys = array_keys($new, $ovalue);
@@ -18,12 +18,12 @@ function diff($old, $new)
         }
     }
     if ($maxlen == 0) {
-        return array(
-            array(
+        return [
+            [
                 'deleted' => $old, 
                 'inserted' => $new
-            )
-        );
+            ]
+        ];
     }
     
     //объеденяем все обратно в массив и возвращаем его 
